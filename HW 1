@@ -1,0 +1,38 @@
+// HOMEWORK 1
+#include <iostream>
+using namespace std;
+
+int tablaMultiplicar(int num){
+    int counter = 1;
+    int product;
+    while (counter <= 10){
+        product = num*counter;
+        cout << num << " x " << counter << " = " << product << endl;
+        counter += 1;
+    }
+    return 0;
+}
+
+int multiplos3o5(){
+    int counter = 999;
+    int sum = 0;
+    while(counter >= 1){
+        if((counter%3 == 0) or (counter%5 == 0)){
+            sum += counter;
+        }
+        counter -= 1;
+    }
+    return sum;
+}
+
+int main() {
+    int num, table, multiplos;
+    cout << "Ingresa el numero del que reqieras su tabla de multiplicar: ";
+    cin >> num;
+    table = tablaMultiplicar(num);
+    cout << table << endl;
+    
+    multiplos = multiplos3o5();
+    cout << "La suma de los multiplos de 3 o 5 del uno al mil es: " << multiplos << endl;
+    return 0;
+}
