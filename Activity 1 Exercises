@@ -1,0 +1,59 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int rectanguloArea(int base, int altura) {
+    return base * altura;
+}
+
+string nametaker(){
+    string name;
+    cout << "Ingresa tu nombre: ";
+    cin >> name;
+    return name;
+} 
+
+int arithmetics(int n1, int n2){
+    int resta, suma, division, multiplicación, mod;
+    resta = n1 - n2;
+    suma = n1 + n2;
+    division = n1/n2;
+    multiplicación = n1*n2;
+    mod = n1%n2;
+    
+    cout << "La suma es: " << suma << endl;
+    cout << "La resta es: " << resta << endl;
+    cout << "La división es: " << division << endl;
+    cout << "La multiplicación es: " << multiplicación << endl;
+    cout << "El mod es: " << mod << endl;
+    
+    return 0;
+}
+
+int main()
+{
+    int base, altura, n1, n2;
+    string nombre;
+    
+    cout << "Ingrese la base del rectángulo: ";
+    cin >> base;
+    cout << "Ingrese la altura del rectángulo: ";
+    cin >> altura;
+    
+    int area = rectanguloArea(base, altura);
+    cout << "El área del rectángulo es: " << area << endl;
+    
+    nombre = nametaker();
+    cout << "Tu nombre es: " << nombre << endl;
+    
+    cout << "Ingresa el primer numero: ";
+    cin >> n1;
+    cout << "Ingresa el segundo numero: ";
+    cin >> n2;
+    
+    int resultados = arithmetics(n1, n2);
+    cout << resultados << endl;
+    
+    return 0;
+}
