@@ -69,9 +69,44 @@ string rectanguloConEspacios(){
     return "Rectangulo hecho";
 }
 
+string rectanguloConEspaciosLoop(){
+    int base, altura, veces, alturafinal, basefinal;
+    cout << "Ingrese el numero de la base: ";
+    cin >> base;
+    cout << "Ingrese el numero de la altura: ";
+    cin >> altura;
+    cout << "Ingrese el numero de veces que quiere ver el rectangulo:";
+    cin >> veces;
+    
+    alturafinal = altura - 2;
+    basefinal = base - 2;
+    
+    while(veces >=1){
+        for (int i = 0; i < base; i++){
+            cout << '*';
+        }
+        cout << endl;
+        for(int i = 0; i < alturafinal; i++){
+            cout << '*';
+            for (int i = 0; i < basefinal; i++){
+                cout << ' ';
+            }
+            if (base > 1){
+            cout << '*' << endl;
+            }
+        }
+        for (int i = 0; i < base; i++){
+                cout << '*';
+            }
+        cout << endl;  
+        veces -= 1;
+    }
+    return "Rectangulo hecho";
+}
+
 int main() {
     int num, table, multiplos;
-    string rectangulo, rectanguloEspacio; 
+    string rectangulo, rectanguloEspacio, rectanguloEspaciosLoop; 
     cout << "Ingresa el numero del que requieras su tabla de multiplicar: ";
     cin >> num;
     table = tablaMultiplicar(num);
@@ -87,6 +122,10 @@ int main() {
     cout << "Para dibujar un rectangulo con espacios siga las instrucciones" << endl;
     rectanguloEspacios = rectanguloConEspacios();
     cout << rectanguloEspacios << endl;
+
+    cout << "Para dibujar un rectangulo con espacios Más de una vez siga las instrucciones" << endl;
+    rectanguloEspaciosLoop = rectanguloConEspaciosLoop();
+    cout << rectanguloEspaciosLoop << endl;
     
     return 0;
 }
