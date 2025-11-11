@@ -1,5 +1,7 @@
 // HOMEWORK 1
+// Online C++ compiler to run C++ program online
 #include <iostream>
+#include <string>
 using namespace std;
 
 int tablaMultiplicar(int num){
@@ -25,14 +27,40 @@ int multiplos3o5(){
     return sum;
 }
 
+string creadorRectangulo(){
+    int base, altura;
+    cout << "Ingrese el numero de la base: ";
+    cin >> base;
+    cout << "Ingrese el numero de la altura: ";
+    cin >> altura;
+    while(altura >= 1){
+        for (int i = 0; i < base; i++){
+            cout << '*';
+        }
+        cout << endl;
+        altura -= 1;
+    }
+    return "Rectangulo hecho";
+}
+
+string rectanguloConEspacios(){
+    
+}
+
 int main() {
     int num, table, multiplos;
-    cout << "Ingresa el numero del que reqieras su tabla de multiplicar: ";
+    string rectangulo; 
+    cout << "Ingresa el numero del que requieras su tabla de multiplicar: ";
     cin >> num;
     table = tablaMultiplicar(num);
     cout << table << endl;
     
     multiplos = multiplos3o5();
     cout << "La suma de los multiplos de 3 o 5 del uno al mil es: " << multiplos << endl;
-    return 0;
+    
+    cout << "Para dibujar un rectangulo siga las instrucciones" << endl;
+    rectangulo = creadorRectangulo();
+    cout << rectangulo << endl;
+    
+     return 0;
 }
