@@ -44,12 +44,34 @@ string creadorRectangulo(){
 }
 
 string rectanguloConEspacios(){
+    int base, altura;
+    cout << "Ingrese el numero de la base: ";
+    cin >> base;
+    cout << "Ingrese el numero de la altura: ";
+    cin >> altura;
+    for (int i = 0; i < base; i++){
+            cout << '*';
+        }
+        cout << endl;
     
+    while(altura-2 >= 1){
+        cout << '*';
+        for (int i = 0; i < base-2; i++){
+            cout << ' ';
+        }
+        cout << '*' << endl;
+        altura -= 1;
+    }
+    for (int i = 0; i < base; i++){
+            cout << '*';
+        }
+        cout << endl;
+    return "Rectangulo hecho";
 }
 
 int main() {
     int num, table, multiplos;
-    string rectangulo; 
+    string rectangulo, rectanguloEspacio; 
     cout << "Ingresa el numero del que requieras su tabla de multiplicar: ";
     cin >> num;
     table = tablaMultiplicar(num);
@@ -61,6 +83,10 @@ int main() {
     cout << "Para dibujar un rectangulo siga las instrucciones" << endl;
     rectangulo = creadorRectangulo();
     cout << rectangulo << endl;
+
+    cout << "Para dibujar un rectangulo con espacios siga las instrucciones" << endl;
+    rectanguloEspacios = rectanguloConEspacios();
+    cout << rectanguloEspacios << endl;
     
-     return 0;
+    return 0;
 }
